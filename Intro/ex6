@@ -1,0 +1,12 @@
+def maxim_dintre_3(a, b, c):
+    maxim = a
+    if b > maxim:
+        maxim = b
+    if c > maxim:
+        maxim = c
+    return maxim
+x = int(input("Introdu x: "))
+y = int(input("Introdu y: "))
+z = int(input("Introdu z: "))
+
+print(maxim_dintre_3(x, y, z))

@@ -1,0 +1,17 @@
+def calculeaza(x, y, op):
+    if op == "+":
+        return x + y
+    elif op == "-":
+        return x - y
+    elif op == "*":
+        return x * y
+    elif op == "/":
+        return x / y
+    else:
+        return "Operator invalid"
+
+x = int(input("Introdu x: "))
+y = int(input("Introdu y: "))
+op = input("Introdu operatia (+, -, *, /): ")
+
+print(calculeaza(x, y, op))
