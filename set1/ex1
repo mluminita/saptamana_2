@@ -1,0 +1,15 @@
+def cmmdc_doua_numere(a, b):
+    if b == 0:
+        return a
+    return cmmdc_doua_numere(b, a % b)
+
+
+def cmmdc(*numere):
+    rezultat = numere[0]          # pornim de la primul număr
+    for n in numere[1:]:          # parcurgem restul numerelor (de la al 2-lea încolo)
+        rezultat = cmmdc_doua_numere(rezultat, n)
+    return rezultat
+
+print(cmmdc(12, 18, 24))       # 6
+print(cmmdc(100, 75))          # 25
+print(cmmdc(7, 14, 21, 49))    # 7
