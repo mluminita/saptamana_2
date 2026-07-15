@@ -1,0 +1,10 @@
+def numar_vocale(text):
+    contor = 0
+    for litera in text:
+        if litera in "aeiouAEIOU":
+            contor += 1
+    return contor
+
+
+text_introdus = input("Introdu un text: ")
+print("Numar de vocale:", numar_vocale(text_introdus))
