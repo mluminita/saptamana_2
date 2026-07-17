@@ -1,0 +1,8 @@
+def numara_aparitii(cauta, in_sir):
+    contor = 0
+    for i in range(len(in_sir) - len(cauta) + 1):
+        if in_sir[i:i+len(cauta)] == cauta:
+            contor += 1
+    return contor
+
+print(numara_aparitii("ab", "ababab"))  # 3

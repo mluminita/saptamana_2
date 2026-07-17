@@ -1,0 +1,9 @@
+def verifica_lant(char_len, *cuvinte):
+    for i in range(len(cuvinte) - 1):
+        primul = cuvinte[i]
+        al_doilea = cuvinte[i + 1]
+        if primul[-char_len:] != al_doilea[:char_len]:
+            return False
+    return True
+
+print(verifica_lant(3, "ana", "analog", "patrat"))  # True

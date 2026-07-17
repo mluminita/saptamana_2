@@ -1,0 +1,13 @@
+def camel_to_snake(s):
+    rezultat = ""
+    for i in range(len(s)):
+        ch = s[i]
+        if ch.isupper():
+            if i != 0:
+                rezultat += "_"
+            rezultat += ch.lower()
+        else:
+            rezultat += ch
+    return rezultat
+
+print(camel_to_snake("UpperCamelCase"))  # upper_camel_case

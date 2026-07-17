@@ -1,0 +1,9 @@
+def are_caractere_speciale(s):
+    speciale = "\r\t\n\a\b\f\v"
+    for ch in s:
+        if ch in speciale:
+            return True
+    return False
+
+print(are_caractere_speciale("abc\ndef"))  # True
+print(are_caractere_speciale("abcdef"))    # False
