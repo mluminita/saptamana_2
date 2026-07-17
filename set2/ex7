@@ -1,0 +1,16 @@
+def filtreaza_ascii(*siruri, x=1, flag=True):
+    rezultat = []
+    for s in siruri:
+        caractere = []
+        for ch in s:
+            if flag:
+                if ord(ch) % x == 0:
+                    caractere.append(ch)
+            else:
+                if ord(ch) % x != 0:
+                    caractere.append(ch)
+        rezultat.append(caractere)
+    return rezultat
+
+print(filtreaza_ascii("test", "hello", "lab002", x=2, flag=False))
+# [['e', 's'], ['e', 'o'], ['a']]

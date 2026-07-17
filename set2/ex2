@@ -1,0 +1,16 @@
+def este_prim(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def numere_prime(lst):
+    rezultat = []
+    for n in lst:
+        if este_prim(n):
+            rezultat.append(n)
+    return rezultat
+
+print(numere_prime([4, 7, 10, 13, 15, 17]))  # [7, 13, 17]

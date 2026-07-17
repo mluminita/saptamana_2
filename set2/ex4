@@ -1,0 +1,25 @@
+def operatii_liste(a, b):
+    intersectie = []
+    for elem in a:
+        if elem in b and elem not in intersectie:
+            intersectie.append(elem)
+
+    reuniune = []
+    for elem in a + b:
+        if elem not in reuniune:
+            reuniune.append(elem)
+
+    a_minus_b = []
+    for elem in a:
+        if elem not in b and elem not in a_minus_b:
+            a_minus_b.append(elem)
+
+    b_minus_a = []
+    for elem in b:
+        if elem not in a and elem not in b_minus_a:
+            b_minus_a.append(elem)
+
+    return intersectie, reuniune, a_minus_b, b_minus_a
+
+print(operatii_liste([1, 2, 3], [2, 3, 4]))
+# ([2, 3], [1, 2, 3, 4], [1], [4])
