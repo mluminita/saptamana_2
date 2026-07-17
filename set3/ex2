@@ -1,0 +1,11 @@
+def numara_caractere(s):
+    rezultat = {}
+    for ch in s:
+        if ch in rezultat:
+            rezultat[ch] += 1
+        else:
+            rezultat[ch] = 1
+    return rezultat
+
+print(numara_caractere("Ana are mere."))
+# {'A': 1, 'n': 1, 'a': 2, ' ': 2, 'r': 2, 'e': 3, 'm': 1, '.': 1}

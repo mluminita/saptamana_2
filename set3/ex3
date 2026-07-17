@@ -1,0 +1,37 @@
+def sunt_egale(v1, v2):
+    if isinstance(v1, dict) and isinstance(v2, dict):
+        diferite, doar1, doar2 = compara_dictionare(v1, v2)
+        return len(diferite) == 0 and len(doar1) == 0 and len(doar2) == 0
+    if isinstance(v1, (list, tuple)) and isinstance(v2, (list, tuple)):
+        if len(v1) != len(v2):
+            return False
+        for i in range(len(v1)):
+            if not sunt_egale(v1[i], v2[i]):
+                return False
+        return True
+    if isinstance(v1, set) and isinstance(v2, set):
+        return v1 == v2   # elementele unui set sunt primitive/hashable
+    return v1 == v2
+
+def compara_dictionare(d1, d2):
+    chei_comune_diferite = []
+    doar_in_d1 = []
+    doar_in_d2 = []
+
+    for cheie in d1:
+        if cheie not in d2:
+            doar_in_d1.append(cheie)
+        else:
+            if not sunt_egale(d1[cheie], d2[cheie]):
+                chei_comune_diferite.append(cheie)
+
+    for cheie in d2:
+        if cheie not in d1:
+            doar_in_d2.append(cheie)
+
+    return (chei_comune_diferite, doar_in_d1, doar_in_d2)
+
+d1 = {"a": 1, "b": {"x": 2}, "c": 3}
+d2 = {"a": 1, "b": {"x": 5}, "d": 4}
+print(compara_dictionare(d1, d2))
+# (['b'], ['c'], ['d'])

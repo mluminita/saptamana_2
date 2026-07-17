@@ -1,0 +1,12 @@
+def build_xml_element(tag, content, **atribute):
+    atribute_text = ""
+    for cheie, valoare in atribute.items():
+        nume = cheie
+        if nume.startswith("_"):
+            nume = nume[1:] + "_"    # _class -> class_
+        atribute_text += f' {nume}="{valoare}"'
+
+    return f"<{tag}{atribute_text}>{content}</{tag}>"
+
+print(build_xml_element("a", "Hello there", href="http://python.org", _class="my-link", id="someid"))
+# <a href="http://python.org" class_="my-link" id="someid">Hello there</a>
